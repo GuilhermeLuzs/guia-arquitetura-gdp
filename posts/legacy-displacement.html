@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patterns of Legacy Displacement</title>
+  <meta name="description" content="Resumo do post Patterns of Legacy Displacement, com vantagens, desvantagens e impacto na gestão do projeto.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="../index.html">
+        <img src="../assets/img/logo-senai.png" alt="Logo SENAI">
+        <span>Guia Web de Arquitetura de Software</span>
+      </a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Principal">
+        <ul class="menu" id="menu-principal">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="monolith-first.html">Monolith First</a></li>
+          <li><a href="presentation-domain-data-layering.html">Presentation Domain Data Layering</a></li>
+          <li><a href="legacy-displacement.html" aria-current="page">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="post-topo">
+      <span class="etiqueta">Post 3 de 3</span>
+      <h1>Patterns of Legacy Displacement</h1>
+      <p class="autores">Ian Cartwright, Rob Horn e James Lewis</p>
+      <a class="botao" href="https://martinfowler.com/articles/patterns-legacy-displacement/" target="_blank" rel="noopener">
+        Ler o post original <i data-lucide="external-link"></i>
+      </a>
+    </section>
+
+    <section class="secao" aria-labelledby="ideia-central">
+      <h2 id="ideia-central">1. Ideia central</h2>
+
+      <p>O post “Patterns of Legacy Displacement”, escrito por Ian Cartwright, Rob Horn e James Lewis e publicado no site de Martin Fowler, discute como substituir sistemas legados, ou seja, sistemas antigos que ainda sustentam o negócio, mas que ficaram caros e difíceis de mudar. Com base em cerca de duas décadas de experiência, os autores, que trabalham na Thoughtworks, defendem que essa troca seja feita de forma gradual e segura, em vez de substituir tudo de uma só vez.</p>
+
+      <p>Os autores contam que muitas empresas tentam trocar seus sistemas antigos várias vezes e nunca terminam. Em um dos casos citados, a empresa passou por programas de modernização de 3 a 5 anos cada, e em todos eles as necessidades do negócio mudavam no meio do caminho e o plano precisava recomeçar.</p>
+
+      <p>Segundo eles, isso acontecia por três motivos principais:</p>
+
+      <ul class="motivos">
+        <li>A empresa achava que bastava escolher uma tecnologia nova e manter todo o resto igual.</li>
+        <li>A modernização era tratada como um projeto separado do dia a dia, com requisitos difíceis de mudar.</li>
+        <li>A empresa queria refazer o sistema exatamente igual ao antigo e trocar tudo de uma só vez.</li>
+      </ul>
+
+      <p>Para os autores, a tecnologia é no máximo metade do problema. A forma de trabalhar, a estrutura da organização e a liderança pesam tanto quanto ela.</p>
+
+      <p>Para quebrar esse ciclo, o artigo propõe quatro atividades:</p>
+
+      <ol class="passos grade grade-4">
+        <li>
+          <span class="numero">Passo 1</span>
+          <h3>Entender os resultados desejados</h3>
+          <p>Definir o que a empresa quer alcançar, como reduzir custos, melhorar processos ou aposentar um sistema sem suporte. Usar tecnologia nova não deve ser o objetivo por si só.</p>
+        </li>
+        <li>
+          <span class="numero">Passo 2</span>
+          <h3>Dividir o problema em partes menores</h3>
+          <p>Encontrar pontos no sistema e no negócio que permitam substituir pedaços de forma independente.</p>
+        </li>
+        <li>
+          <span class="numero">Passo 3</span>
+          <h3>Entregar as partes aos poucos</h3>
+          <p>Fazer o sistema novo conviver com o antigo até assumir todas as funções dele.</p>
+        </li>
+        <li>
+          <span class="numero">Passo 4</span>
+          <h3>Mudar a organização</h3>
+          <p>Ajustar equipes, processos e cultura para que o sistema novo não vire o próximo legado.</p>
+        </li>
+      </ol>
+
+      <div class="card exemplo">
+        <h3>Exemplo do artigo</h3>
+        <p>Uma das equipes dos autores precisava substituir um middleware de integração, que é um sistema intermediário responsável por ligar o sistema interno de uma empresa à sua loja online, por onde passavam dezenas de milhões de libras em vendas por dia. Esse middleware estava sem suporte, era caro e difícil de mudar, e ainda guardava regras importantes do negócio, como quando e onde cada produto seria colocado à venda. O sistema interno avisava o middleware sobre cada produto publicado por meio de mensagens em uma fila, e a equipe aproveitou esse ponto para aplicar o padrão <a class="termo" href="https://www.martinfowler.com/articles/patterns-legacy-displacement/event-interception.html" target="_blank" rel="noopener">Event Interception</a>. Eles criaram um componente chamado Event Router, que passou a receber essas mensagens antes do middleware e podia ser configurado para enviar cada produto ao middleware antigo ou ao sistema novo. Com isso, os produtos foram migrados aos poucos, começando por alguns itens específicos e depois por tipos inteiros de produto. Quando todos já estavam no sistema novo, o middleware foi desligado, gerando economia com licenças, suporte e hospedagem.</p>
+      </div>
+
+      <p class="fechamento">Concluindo, os autores mostram que o exemplo coloca em prática as quatro atividades propostas no artigo, desde a definição dos resultados desejados até a mudança na organização. Segundo eles, foi a combinação da interceptação de eventos com a migração por tipo de produto que permitiu controlar os riscos e deixar o negócio avançar no próprio ritmo.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="vantagens-desvantagens">
+      <h2 id="vantagens-desvantagens">2. Vantagens e desvantagens</h2>
+      <div class="grade grade-2">
+        <div class="card vantagens">
+          <h3>Vantagens</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="check"></i><span>Reduz os riscos, já que cada parte é liberada separadamente e um erro afeta só um pedaço do negócio.</span></li>
+            <li><i data-lucide="check"></i><span>A empresa vê resultados mais cedo, sem esperar anos pelo sistema completo.</span></li>
+            <li><i data-lucide="check"></i><span>O negócio continua recebendo melhorias enquanto a troca acontece.</span></li>
+            <li><i data-lucide="check"></i><span>Aumenta a chance de o sistema antigo realmente ser desligado.</span></li>
+          </ul>
+        </div>
+        <div class="card desvantagens">
+          <h3>Desvantagens</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="x"></i><span>Exige criar componentes temporários, a chamada arquitetura de transição, que serão descartados no final.</span></li>
+            <li><i data-lucide="x"></i><span>Encontrar os pontos certos para dividir o sistema é difícil no começo.</span></li>
+            <li><i data-lucide="x"></i><span>Com os dois sistemas convivendo, a estrutura fica mais complexa e podem surgir dependências desconhecidas.</span></li>
+            <li><i data-lucide="x"></i><span>Depende de uma mudança de cultura, e muitas empresas acabam rejeitando o novo.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="impacto-gestao">
+      <h2 id="impacto-gestao">3. Impacto na gestão do projeto</h2>
+      <p>A substituição gradual de sistemas legados troca uma única entrega no fim de vários anos por entregas menores e frequentes, que acompanham as mudanças do negócio. A arquitetura de transição gera um custo extra, mas evita o desperdício de projetos abandonados, e a economia aparece conforme o sistema antigo é desligado. Pela <a class="termo" href="https://martinfowler.com/bliki/ConwaysLaw.html" target="_blank" rel="noopener">Lei de Conway</a>, as equipes podem precisar ser reorganizadas junto com o sistema. O maior ganho está nos riscos, que deixam de se concentrar em um único momento e são divididos em entregas menores e mais fáceis de corrigir.</p>
+    </section>
+
+    <nav class="nav-posts" aria-label="Navegação entre posts">
+      <a href="presentation-domain-data-layering.html"><i data-lucide="arrow-left"></i> Anterior: Presentation Domain Data Layering</a>
+      <a href="../index.html">Voltar para a home</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Escola SENAI Félix Guisard, Taubaté · Unidade curricular: Gestão de Projetos · 2026</p>
+      <p>Integrantes: Bento Gabriel, Guilherme Luz e Marcus Vinicius</p>
+      <p class="creditos">Os textos originais pertencem aos seus autores e ao site martinfowler.com. Este site é um trabalho acadêmico e foi desenvolvido com o auxílio de inteligência artificial.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

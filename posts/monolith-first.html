@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monolith First</title>
+  <meta name="description" content="Resumo do post Monolith First, com vantagens, desvantagens e impacto na gestão do projeto.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="../index.html">
+        <img src="../assets/img/logo-senai.png" alt="Logo SENAI">
+        <span>Guia Web de Arquitetura de Software</span>
+      </a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Principal">
+        <ul class="menu" id="menu-principal">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="monolith-first.html" aria-current="page">Monolith First</a></li>
+          <li><a href="presentation-domain-data-layering.html">Presentation Domain Data Layering</a></li>
+          <li><a href="legacy-displacement.html">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="post-topo">
+      <span class="etiqueta">Post 1 de 3</span>
+      <h1>Monolith First</h1>
+      <p class="autores">Martin Fowler</p>
+      <a class="botao" href="https://martinfowler.com/bliki/MonolithFirst.html" target="_blank" rel="noopener">
+        Ler o post original <i data-lucide="external-link"></i>
+      </a>
+    </section>
+
+    <section class="secao" aria-labelledby="ideia-central">
+      <h2 id="ideia-central">1. Ideia central</h2>
+      <p>O post “Monolith First” de Martin Fowler apresenta uma discussão a respeito de iniciar um projeto de TI como uma arquitetura de monólito ou de microsserviços.</p>
+
+      <p>O autor aponta que os defensores de iniciar projetos com monólito dizem que essa abordagem permite planejar a versão inicial do projeto de maneira mais rápida (validando mais rápido no mercado) e, com o seu crescimento, identificar pontos que são passíveis do uso de microsserviços. Essa identificação acontece de maneira natural, sendo mais fácil definir os limites do que realmente deverá se tornar um serviço à parte. Além disso, com um “Monolith First” bem estruturado e modularizado, a transição para microsserviços não é tão custosa e o desenvolvimento inicial não se torna tão complexo. Quanto à transição, é possível tanto dissolver totalmente em microsserviços, quanto manter o monólito com algumas funções e separar o restante em microsserviços.</p>
+
+      <p>Já os defensores de iniciar um projeto já com a arquitetura em microsserviços apontam que este modelo permite já se habituar a uma estrutura separada desde o início, além de não precisar fazer grandes mudanças estruturais na equipe durante o desenvolvimento, já começando com pequenas equipes para cada um dos microsserviços. Ainda, o autor aponta que a criação de um monólito bem estruturado e modulado para ser separado posteriormente muitas das vezes não é uma tarefa simples.</p>
+
+      <p>Por fim, finaliza dizendo que essa ainda é uma discussão em aberto e que não parece coerente definir um veredito, visto que as aplicações de microsserviços ainda estão ganhando espaço.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="vantagens-desvantagens">
+      <h2 id="vantagens-desvantagens">2. Vantagens e desvantagens</h2>
+      <div class="grade grade-2">
+        <div class="card vantagens">
+          <h3>Vantagens</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="check"></i><span>Um monólito bem estruturado pode ser convertido em microsserviços</span></li>
+            <li><i data-lucide="check"></i><span>A publicação de um MVP para aprovação do mercado pode ser mais ágil</span></li>
+            <li><i data-lucide="check"></i><span>É mais simples e natural visualizar os limites para a separação em microsserviços conforme o crescimento do monólito</span></li>
+          </ul>
+        </div>
+        <div class="card desvantagens">
+          <h3>Desvantagens</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="x"></i><span>A manutenção de um sistema em monólito pode afetar diversas partes não envolvidas</span></li>
+            <li><i data-lucide="x"></i><span>A futura migração para microsserviços altera a composição de equipes já estabelecidas</span></li>
+            <li><i data-lucide="x"></i><span>Criar um monólito bem modulado para posterior migração não é simples</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="impacto-gestao">
+      <h2 id="impacto-gestao">3. Impacto na gestão do projeto</h2>
+      <p>Aplicações “Monolith First” podem manter uma equipe mais integrada inicialmente, com maior folga no prazo de implementação inicial e para testes de viabilidade. Os custos são menores, pois utiliza apenas uma infraestrutura para todo o projeto e necessita de menos equipe e integração para manter. O principal risco é a dificuldade da manutenção, pois alterações em funções específicas podem afetar outras. Além disso, uma futura migração exigirá uma realocação da equipe e talvez uma expansão.</p>
+    </section>
+
+    <nav class="nav-posts" aria-label="Navegação entre posts">
+      <a href="../index.html"><i data-lucide="arrow-left"></i> Voltar para a home</a>
+      <a href="presentation-domain-data-layering.html">Próximo: Presentation Domain Data Layering <i data-lucide="arrow-right"></i></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Escola SENAI Félix Guisard, Taubaté · Unidade curricular: Gestão de Projetos · 2026</p>
+      <p>Integrantes: Bento Gabriel, Guilherme Luz e Marcus Vinicius</p>
+      <p class="creditos">Os textos originais pertencem aos seus autores e ao site martinfowler.com. Este site é um trabalho acadêmico e foi desenvolvido com o auxílio de inteligência artificial.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
