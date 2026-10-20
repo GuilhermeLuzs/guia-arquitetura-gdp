@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentation Domain Data Layering</title>
+  <meta name="description" content="Summary of the post Presentation Domain Data Layering, with advantages, disadvantages and impact on project management.">
+  <link rel="alternate" hreflang="pt-BR" href="../../posts/presentation-domain-data-layering.html">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/logo-senai.png" alt="SENAI logo">
+        <span>Software Architecture Web Guide</span>
+      </a>
+      <div class="idioma" aria-label="Language">
+        <a href="../../posts/presentation-domain-data-layering.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+        <a href="presentation-domain-data-layering.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Open menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu-principal">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="monolith-first.html">Monolith First</a></li>
+          <li><a href="presentation-domain-data-layering.html" aria-current="page">Presentation Domain Data Layering</a></li>
+          <li><a href="legacy-displacement.html">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="post-topo">
+      <span class="etiqueta">Post 2 of 3</span>
+      <h1>Presentation Domain Data Layering</h1>
+      <p class="autores">Martin Fowler</p>
+      <a class="botao" href="https://martinfowler.com/bliki/PresentationDomainDataLayering.html" target="_blank" rel="noopener">
+        Read the original post <i data-lucide="external-link"></i>
+      </a>
+    </section>
+
+    <section class="secao" aria-labelledby="ideia-central">
+      <h2 id="ideia-central">1. Core idea</h2>
+      <p>The post “Presentation Domain Data Layering” by Martin Fowler addresses the division of an IT system into layers, focusing first on the presentation, domain and data layers and, later, on the need for further divisions as a project grows.</p>
+
+      <p>The author starts with an example of a layer division he likes to work with, split into a presentation layer (where information is displayed to the user), a domain layer (where logical and arithmetic operations and processing take place) and a data layer (where the interaction with a persistent database happens). He points out that this layered organization makes it easier to focus development on one activity at a time, setting aside the overall complexity of the application while each part is developed separately and narrowing the scope of reasoning to each part.</p>
+
+      <p>Fowler also points out that this way of developing helps with code reuse and makes it easier to change the technologies of specific layers, as long as the contracts between them remain consistent. For example, a function or technology changed in the presentation layer can be applied to several interfaces without having to redo all the other layers.</p>
+
+      <p>Finally, the author highlights that this three-layer division works up to a certain point because, in more complex systems, even the presentation, domain and data layers start to become confusing as they carry too many functions. In these cases, it is worth breaking these layers down into more layers according to the project’s needs, in order to keep the benefits of this architecture.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="vantagens-desvantagens">
+      <h2 id="vantagens-desvantagens">2. Advantages and disadvantages</h2>
+      <div class="grade grade-2">
+        <div class="card vantagens">
+          <h3>Advantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="check"></i><span>Focus on the task assigned to each layer, instead of thinking about the whole system at once</span></li>
+            <li><i data-lucide="check"></i><span>Easier maintenance or technology changes in one of the layers without rework in the other parts</span></li>
+            <li><i data-lucide="check"></i><span>Modules created in one layer can be reused in others</span></li>
+          </ul>
+        </div>
+        <div class="card desvantagens">
+          <h3>Disadvantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="x"></i><span>Excessive abstraction if poorly planned, making the application more confusing</span></li>
+            <li><i data-lucide="x"></i><span>Steeper learning curve for beginners</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="impacto-gestao">
+      <h2 id="impacto-gestao">3. Impact on project management</h2>
+      <p>Applying presentation, domain and data layers allows a better division of the development team and speeds up the understanding of the project, besides saving resources and reducing the risk that specific maintenance tasks or technology changes in one of the layers affect the whole project. It also improves development efficiency through code reuse and fixes already targeted at specific layers. It may require more adaptation time from a beginner team.</p>
+    </section>
+
+    <nav class="nav-posts" aria-label="Post navigation">
+      <a href="monolith-first.html"><i data-lucide="arrow-left"></i> Previous: Monolith First</a>
+      <a href="legacy-displacement.html">Next: Patterns of Legacy Displacement <i data-lucide="arrow-right"></i></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>SENAI Félix Guisard School, Taubaté · Course unit: Project Management · 2026</p>
+      <p>Team: Bento Gabriel, Guilherme Luz and Marcus Vinicius</p>
+      <p class="creditos">The original texts belong to their authors and to martinfowler.com. This site is an academic project and was developed with the help of artificial intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

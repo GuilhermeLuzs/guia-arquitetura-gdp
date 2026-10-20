@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software Architecture Web Guide</title>
+  <meta name="description" content="Project Management coursework on three posts from Martin Fowler's blog: Monolith First, Presentation Domain Data Layering and Patterns of Legacy Displacement.">
+  <link rel="alternate" hreflang="pt-BR" href="../index.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="index.html">
+        <img src="../assets/img/logo-senai.png" alt="SENAI logo">
+        <span>Software Architecture Web Guide</span>
+      </a>
+      <div class="idioma" aria-label="Language">
+        <a href="../index.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+        <a href="index.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Open menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu-principal">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="posts/monolith-first.html">Monolith First</a></li>
+          <li><a href="posts/presentation-domain-data-layering.html">Presentation Domain Data Layering</a></li>
+          <li><a href="posts/legacy-displacement.html">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="apresentacao" aria-labelledby="titulo-trabalho">
+      <h1 id="titulo-trabalho">Software Architecture Web Guide</h1>
+      <p class="narrativa">This site is an academic project for the Project Management course unit at SENAI Félix Guisard School, in Taubaté, Brazil. In it, the team analyzes three posts from Martin Fowler's blog about software architecture and shows how each technical decision affects the management of a project. For each post, the team explains the core idea, points out the advantages and disadvantages, and relates the concept to the project's schedule, cost, team and risks.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-escolha">
+      <h2 id="titulo-escolha">The three posts and the life cycle of a system</h2>
+      <p class="narrativa">The team chose three posts that, together, represent the stages in the life of a system, from its first version to the moment it grows old and needs to be modernized. This way, each post answers a question that project management faces at a different moment.</p>
+      <p class="narrativa"><strong>How to start?</strong> In Monolith First, Martin Fowler discusses whether a new system should be born as a monolith or already split into microservices. Starting with a monolith makes it possible to validate the product faster and to see over time where it makes sense to split, but the author himself acknowledges that the question remains open.</p>
+      <p class="narrativa"><strong>How to organize it internally?</strong> As the system grows, Presentation Domain Data Layering deals with the separation into presentation, domain and data, so that each part can be developed, reused and changed without redoing the others. In more complex systems, these layers can be further divided into smaller parts.</p>
+      <p class="narrativa"><strong>What to do when it grows old?</strong> Over the years, a system can become a legacy that is expensive and hard to change. Patterns of Legacy Displacement shows how to replace it gradually, with the new system running alongside the old one, instead of betting on a complete replacement all at once.</p>
+      <p class="narrativa">In all these stages, architecture decisions directly affect the project's schedule, cost, team and risks.</p>
+      <ol class="linha-tempo grade grade-3">
+        <li>
+          <a class="card" href="posts/monolith-first.html">
+            <span class="numero">1</span>
+            <h3>Monolith First</h3>
+            <p class="texto-suave">Martin Fowler discusses whether a system should start as a monolith or already split into microservices.</p>
+            <span class="ler">Read analysis <i data-lucide="arrow-right"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="posts/presentation-domain-data-layering.html">
+            <span class="numero">2</span>
+            <h3>Presentation Domain Data Layering</h3>
+            <p class="texto-suave">Martin Fowler explains the separation into presentation, domain and data, and how it makes maintenance and reuse easier.</p>
+            <span class="ler">Read analysis <i data-lucide="arrow-right"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="posts/legacy-displacement.html">
+            <span class="numero">3</span>
+            <h3>Patterns of Legacy Displacement</h3>
+            <p class="texto-suave">Cartwright, Horn and Lewis show how to replace legacy systems gradually, instead of swapping everything at once.</p>
+            <span class="ler">Read analysis <i data-lucide="arrow-right"></i></span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-integrantes">
+      <h2 id="titulo-integrantes">Team members</h2>
+      <div class="grade grade-3">
+        <div class="integrante">
+          <img class="foto" src="../assets/img/bento-gabriel.jpg" alt="Photo of Bento Gabriel">
+          <h3>Bento Gabriel</h3>
+          <a class="linkedin" href="https://www.linkedin.com/in/bento-gabriel-ferreira-marcondes-3a969b277/" target="_blank" rel="noopener" aria-label="Bento Gabriel's LinkedIn"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+        <div class="integrante">
+          <img class="foto" src="../assets/img/guilherme-luz.png" alt="Photo of Guilherme Luz">
+          <h3>Guilherme Luz</h3>
+          <a class="linkedin" href="https://www.linkedin.com/in/guilherme-luz-9a5270280/" target="_blank" rel="noopener" aria-label="Guilherme Luz's LinkedIn"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+        <div class="integrante">
+          <img class="foto" src="../assets/img/marcus-vinicius.jpg" alt="Photo of Marcus Vinicius">
+          <h3>Marcus Vinicius</h3>
+          <a class="linkedin" href="https://www.linkedin.com/in/marcus-vinicius-candido-de-oliveira-0b46a2277/" target="_blank" rel="noopener" aria-label="Marcus Vinicius's LinkedIn"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>SENAI Félix Guisard School, Taubaté · Course unit: Project Management · 2026</p>
+      <p>Team: Bento Gabriel, Guilherme Luz and Marcus Vinicius</p>
+      <p class="creditos">The original texts belong to their authors and to martinfowler.com. This site is an academic project and was developed with the help of artificial intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

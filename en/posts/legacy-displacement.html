@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patterns of Legacy Displacement</title>
+  <meta name="description" content="Summary of the post Patterns of Legacy Displacement, with advantages, disadvantages and impact on project management.">
+  <link rel="alternate" hreflang="pt-BR" href="../../posts/legacy-displacement.html">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/logo-senai.png" alt="SENAI logo">
+        <span>Software Architecture Web Guide</span>
+      </a>
+      <div class="idioma" aria-label="Language">
+        <a href="../../posts/legacy-displacement.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+        <a href="legacy-displacement.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Open menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu-principal">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="monolith-first.html">Monolith First</a></li>
+          <li><a href="presentation-domain-data-layering.html">Presentation Domain Data Layering</a></li>
+          <li><a href="legacy-displacement.html" aria-current="page">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="post-topo">
+      <span class="etiqueta">Post 3 of 3</span>
+      <h1>Patterns of Legacy Displacement</h1>
+      <p class="autores">Ian Cartwright, Rob Horn and James Lewis</p>
+      <a class="botao" href="https://martinfowler.com/articles/patterns-legacy-displacement/" target="_blank" rel="noopener">
+        Read the original post <i data-lucide="external-link"></i>
+      </a>
+    </section>
+
+    <section class="secao" aria-labelledby="ideia-central">
+      <h2 id="ideia-central">1. Core idea</h2>
+
+      <p>The post “Patterns of Legacy Displacement”, written by Ian Cartwright, Rob Horn and James Lewis and published on Martin Fowler’s website, discusses how to replace legacy systems, that is, old systems that still support the business but have become expensive and hard to change. Drawing on about two decades of experience, the authors, who work at Thoughtworks, argue that this replacement should be done gradually and safely, instead of replacing everything at once.</p>
+
+      <p>The authors explain that many companies try to replace their old systems several times and never finish. In one of the cases they mention, the company went through modernization programs of 3 to 5 years each, and in all of them the business needs changed along the way and the plan had to start over.</p>
+
+      <p>According to them, this happened for three main reasons:</p>
+
+      <ul class="motivos">
+        <li>The company thought it was enough to choose a new technology and keep everything else the same.</li>
+        <li>Modernization was treated as a project separate from day-to-day operations, with requirements that were hard to change.</li>
+        <li>The company wanted to rebuild the system exactly like the old one and swap everything at once.</li>
+      </ul>
+
+      <p>For the authors, technology is at most half of the problem. The way of working, the structure of the organization and leadership matter just as much.</p>
+
+      <p>To break this cycle, the article proposes four activities:</p>
+
+      <ol class="passos grade grade-4">
+        <li>
+          <span class="numero">Step 1</span>
+          <h3>Understand the desired outcomes</h3>
+          <p>Define what the company wants to achieve, such as reducing costs, improving processes or retiring an unsupported system. Using new technology should not be a goal in itself.</p>
+        </li>
+        <li>
+          <span class="numero">Step 2</span>
+          <h3>Break the problem into smaller parts</h3>
+          <p>Find points in the system and in the business that allow pieces to be replaced independently.</p>
+        </li>
+        <li>
+          <span class="numero">Step 3</span>
+          <h3>Deliver the parts gradually</h3>
+          <p>Have the new system run alongside the old one until it takes over all of its functions.</p>
+        </li>
+        <li>
+          <span class="numero">Step 4</span>
+          <h3>Change the organization</h3>
+          <p>Adjust teams, processes and culture so that the new system does not become the next legacy.</p>
+        </li>
+      </ol>
+
+      <div class="card exemplo">
+        <h3>Example from the article</h3>
+        <p>One of the authors’ teams needed to replace an integration middleware, an intermediate system responsible for connecting a company’s internal system to its online store, through which tens of millions of pounds in sales passed every day. This middleware was unsupported, expensive and hard to change, and it also held important business rules, such as when and where each product would be put on sale. The internal system notified the middleware about each published product through messages on a queue, and the team took advantage of this point to apply the <a class="termo" href="https://www.martinfowler.com/articles/patterns-legacy-displacement/event-interception.html" target="_blank" rel="noopener">Event Interception</a> pattern. They built a component called Event Router, which started receiving these messages before the middleware and could be configured to send each product to either the old middleware or the new system. With this, products were migrated gradually, starting with a few specific items and then whole product types. Once all of them were on the new system, the middleware was switched off, bringing savings on licenses, support and hosting.</p>
+      </div>
+
+      <p class="fechamento">In conclusion, the authors show that the example puts into practice the four activities proposed in the article, from defining the desired outcomes to changing the organization. According to them, it was the combination of event interception with migration by product type that made it possible to control the risks and let the business move forward at its own pace.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="vantagens-desvantagens">
+      <h2 id="vantagens-desvantagens">2. Advantages and disadvantages</h2>
+      <div class="grade grade-2">
+        <div class="card vantagens">
+          <h3>Advantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="check"></i><span>It reduces risks, since each part is released separately and an error affects only one piece of the business.</span></li>
+            <li><i data-lucide="check"></i><span>The company sees results sooner, without waiting years for the complete system.</span></li>
+            <li><i data-lucide="check"></i><span>The business keeps receiving improvements while the replacement happens.</span></li>
+            <li><i data-lucide="check"></i><span>It increases the chance that the old system is actually switched off.</span></li>
+          </ul>
+        </div>
+        <div class="card desvantagens">
+          <h3>Disadvantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="x"></i><span>It requires building temporary components, the so-called transitional architecture, which will be discarded at the end.</span></li>
+            <li><i data-lucide="x"></i><span>Finding the right points to split the system is hard at the beginning.</span></li>
+            <li><i data-lucide="x"></i><span>With both systems running side by side, the structure becomes more complex and unknown dependencies may appear.</span></li>
+            <li><i data-lucide="x"></i><span>It depends on a cultural change, and many companies end up rejecting the new.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="impacto-gestao">
+      <h2 id="impacto-gestao">3. Impact on project management</h2>
+      <p>Gradually replacing legacy systems swaps a single delivery at the end of several years for smaller, frequent deliveries that keep up with changes in the business. The transitional architecture adds extra cost, but it avoids the waste of abandoned projects, and savings appear as the old system is switched off. According to <a class="termo" href="https://martinfowler.com/bliki/ConwaysLaw.html" target="_blank" rel="noopener">Conway’s Law</a>, teams may need to be reorganized along with the system. The biggest gain is in risk, which is no longer concentrated in a single moment and is instead spread across smaller deliveries that are easier to fix.</p>
+    </section>
+
+    <nav class="nav-posts" aria-label="Post navigation">
+      <a href="presentation-domain-data-layering.html"><i data-lucide="arrow-left"></i> Previous: Presentation Domain Data Layering</a>
+      <a href="../index.html">Back to home</a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>SENAI Félix Guisard School, Taubaté · Course unit: Project Management · 2026</p>
+      <p>Team: Bento Gabriel, Guilherme Luz and Marcus Vinicius</p>
+      <p class="creditos">The original texts belong to their authors and to martinfowler.com. This site is an academic project and was developed with the help of artificial intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

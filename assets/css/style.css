@@ -148,6 +148,31 @@ button:focus-visible {
   flex-shrink: 0;
 }
 
+/* Seletor de idioma: PT | EN */
+.idioma {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.idioma a {
+  padding: 6px 8px;
+  border-radius: var(--raio);
+  color: var(--cor-texto-suave);
+  text-decoration: none;
+}
+
+.idioma a:hover {
+  color: var(--cor-texto);
+  background: var(--cor-fundo-suave);
+}
+
+.idioma a[aria-current="true"] {
+  color: var(--cor-marca-texto);
+}
+
 .menu-botao {
   display: inline-flex;
   align-items: center;

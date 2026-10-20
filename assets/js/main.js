@@ -3,10 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var botao = document.querySelector(".menu-botao");
   var menu = document.getElementById("menu-principal");
 
+  var ingles = document.documentElement.lang.indexOf("en") === 0;
+  var rotulos = ingles
+    ? { abrir: "Open menu", fechar: "Close menu" }
+    : { abrir: "Abrir menu", fechar: "Fechar menu" };
+
   function alternarMenu(abrir) {
     menu.classList.toggle("aberto", abrir);
     botao.setAttribute("aria-expanded", abrir ? "true" : "false");
-    botao.setAttribute("aria-label", abrir ? "Fechar menu" : "Abrir menu");
+    botao.setAttribute("aria-label", abrir ? rotulos.fechar : rotulos.abrir);
   }
 
   if (botao && menu) {

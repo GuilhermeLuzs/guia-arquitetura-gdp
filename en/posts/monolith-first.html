@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monolith First</title>
+  <meta name="description" content="Summary of the post Monolith First, with advantages, disadvantages and impact on project management.">
+  <link rel="alternate" hreflang="pt-BR" href="../../posts/monolith-first.html">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/logo-senai.png" alt="SENAI logo">
+        <span>Software Architecture Web Guide</span>
+      </a>
+      <div class="idioma" aria-label="Language">
+        <a href="../../posts/monolith-first.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+        <a href="monolith-first.html" lang="en" aria-current="true">EN</a>
+      </div>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Open menu">
+        <i data-lucide="menu" class="icone-abrir"></i>
+        <i data-lucide="x" class="icone-fechar"></i>
+      </button>
+      <nav aria-label="Main">
+        <ul class="menu" id="menu-principal">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="monolith-first.html" aria-current="page">Monolith First</a></li>
+          <li><a href="presentation-domain-data-layering.html">Presentation Domain Data Layering</a></li>
+          <li><a href="legacy-displacement.html">Patterns of Legacy Displacement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="post-topo">
+      <span class="etiqueta">Post 1 of 3</span>
+      <h1>Monolith First</h1>
+      <p class="autores">Martin Fowler</p>
+      <a class="botao" href="https://martinfowler.com/bliki/MonolithFirst.html" target="_blank" rel="noopener">
+        Read the original post <i data-lucide="external-link"></i>
+      </a>
+    </section>
+
+    <section class="secao" aria-labelledby="ideia-central">
+      <h2 id="ideia-central">1. Core idea</h2>
+      <p>The post “Monolith First” by Martin Fowler presents a discussion about whether to start an IT project with a monolith or with a microservices architecture.</p>
+
+      <p>The author points out that advocates of starting projects with a monolith say this approach makes it possible to plan the initial version of the project more quickly (validating it in the market sooner) and, as it grows, to identify points that are suitable for microservices. This identification happens naturally, making it easier to define the boundaries of what should really become a separate service. In addition, with a well-structured and modularized “Monolith First”, the transition to microservices is not as costly and the initial development does not become as complex. As for the transition, it is possible either to break it down entirely into microservices or to keep the monolith with some functions and split the rest into microservices.</p>
+
+      <p>On the other hand, advocates of starting a project with a microservices architecture from the outset argue that this model lets the team get used to a separated structure from the beginning, without having to make major structural changes to the team during development, since it already starts with small teams for each microservice. The author also points out that building a well-structured, modular monolith to be split up later is often not a simple task.</p>
+
+      <p>Finally, he concludes that this is still an open discussion and that it does not seem reasonable to reach a verdict, since microservices applications are still gaining ground.</p>
+    </section>
+
+    <section class="secao" aria-labelledby="vantagens-desvantagens">
+      <h2 id="vantagens-desvantagens">2. Advantages and disadvantages</h2>
+      <div class="grade grade-2">
+        <div class="card vantagens">
+          <h3>Advantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="check"></i><span>A well-structured monolith can be converted into microservices</span></li>
+            <li><i data-lucide="check"></i><span>Publishing an MVP for market validation can be faster</span></li>
+            <li><i data-lucide="check"></i><span>It is simpler and more natural to see the boundaries for splitting into microservices as the monolith grows</span></li>
+          </ul>
+        </div>
+        <div class="card desvantagens">
+          <h3>Disadvantages</h3>
+          <ul class="lista-vd">
+            <li><i data-lucide="x"></i><span>Maintaining a monolithic system can affect several unrelated parts</span></li>
+            <li><i data-lucide="x"></i><span>A future migration to microservices changes the makeup of already established teams</span></li>
+            <li><i data-lucide="x"></i><span>Building a well-modularized monolith for later migration is not simple</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="impacto-gestao">
+      <h2 id="impacto-gestao">3. Impact on project management</h2>
+      <p>“Monolith First” applications can keep a more integrated team at first, with more slack in the schedule for the initial implementation and for feasibility tests. Costs are lower, since a single infrastructure is used for the whole project and fewer people and less integration are needed to maintain it. The main risk is the difficulty of maintenance, since changes to specific functions can affect others. In addition, a future migration will require reallocating the team and perhaps expanding it.</p>
+    </section>
+
+    <nav class="nav-posts" aria-label="Post navigation">
+      <a href="../index.html"><i data-lucide="arrow-left"></i> Back to home</a>
+      <a href="presentation-domain-data-layering.html">Next: Presentation Domain Data Layering <i data-lucide="arrow-right"></i></a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>SENAI Félix Guisard School, Taubaté · Course unit: Project Management · 2026</p>
+      <p>Team: Bento Gabriel, Guilherme Luz and Marcus Vinicius</p>
+      <p class="creditos">The original texts belong to their authors and to martinfowler.com. This site is an academic project and was developed with the help of artificial intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
